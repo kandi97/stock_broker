@@ -38,17 +38,15 @@ elif sale=="y":
 		if day<10:
 			day="0"+str(day)
 		SELLDATE= SELLDATE[0:8]+str(day)
-print("Selling date is: ",SELLDATE)
-price_type={'closing':".4", 'low':".3", 'high':".2", 'open':".1"}
+#price_type={'closing':".4", 'low':".3", 'high':".2", 'open':".1"}
 
-print("buydate: ", type(BUYDATE), "Selldate:  ", type(SELLDATE))
-print(BUYDATE, SELLDATE)
+print("buydate: ", BUYDATE, "Selldate:  ", SELLDATE)
 
-key= input("Enter 'closing' for closing price, 'low' for low price, 'high' for high price, 'open' for opening price: ")
+#key= input("Enter 'closing' for closing price, 'low' for low price, 'high' for high price, 'open' for opening price: ")
 
 #mydata = quandl.get(company+price_type[key], start_date="2017-06-15", end_date="2017-06-27")
-mydata1 = quandl.get(company+price_type[key], start_date=BUYDATE, end_date=BUYDATE)
-mydata2 = quandl.get(company+price_type[key], start_date=SELLDATE, end_date=SELLDATE)
+mydata1 = quandl.get(company+'.4', start_date=BUYDATE, end_date=BUYDATE)
+mydata2 = quandl.get(company+'.4', start_date=SELLDATE, end_date=SELLDATE)
 #mydata1 = mydata1[['Close']]
 #mydata2= mydata2[['Close']]
 #mydata= [mydata1, mydata2]
@@ -59,12 +57,12 @@ mydata2 = quandl.get(company+price_type[key], start_date=SELLDATE, end_date=SELL
 #mydata = quandl.get("WIKI/NVDA"+".4", start_date="2017-06-01",end_date="2017-06-27", transformation="diff")
 mydata1=mydata1.to_string()
 mydata2=mydata2.to_string()
-print (mydata1, mydata2)
+#print (mydata1, mydata2)
 
 data1_val= mydata1[48:56]
 data2_val= mydata2[48:56]
-print("d1:  ",data1_val)
-print("d2:  ",data2_val)
+print("Bought at:  ",data1_val)
+print("Sold at:  ",data2_val)
 
 data1_val=float(data1_val)
 data2_val=float(data2_val)
