@@ -4,7 +4,7 @@ path = "/Users/Akhil/anaconda/lib/python3.6/site-packages/quandl "
 auth_tok = "JMkgHX4qe3vKdhz8s46k"
 
 print("Welcome to Stock Broker")
-name= input("Enter the name of the company: ")
+name= input("Enter the name of the company whose stocks you would like to buy: ")
 number_of_shares=input("Enter the number of shares:")
 company = "WIKI/"+name
 BUYDATE= input("Enter the BUY date in YYYY-MM-DD format ")
