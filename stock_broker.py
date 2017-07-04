@@ -3,6 +3,7 @@ import datetime
 path = "/Users/Akhil/anaconda/lib/python3.6/site-packages/quandl "
 auth_tok = "JMkgHX4qe3vKdhz8s46k"
 
+print("test1")
 print("Welcome to Stock Broker")
 name= input("Enter the name of the company whose stocks you would like to buy: ")
 number_of_shares=input("Enter the number of shares:")
