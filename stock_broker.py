@@ -31,7 +31,7 @@ elif sale=="y":
 		if day<10:
 			day="0"+str(day)
 		SELLDATE= SELLDATE[0:8]+str(day)
-	elif answer==6:
+	elif day==6:
 		print("ggg")
 		day= int(SELLDATE[9:10])
 		day= day-1
