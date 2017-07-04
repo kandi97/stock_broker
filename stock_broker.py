@@ -24,9 +24,9 @@ elif sale=="y":
 	day = datetime.date(year, month, day).weekday()
 	
 
-	if day==0: 
+	if day==7: 
 		day= int(SELLDATE[9:10])
-		day = day -3
+		day = day -2
 		
 		if day<10:
 			day="0"+str(day)
