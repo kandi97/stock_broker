@@ -4,8 +4,9 @@ from datetime import date, timedelta
 path = "/Users/Akhil/anaconda/lib/python3.6/site-packages/quandl "
 auth_tok = "JMkgHX4qe3vKdhz8s46k"
 
-
+print()
 print("Welcome to Stock Broker")
+print()
 name= input("Enter the name of the company whose stocks you would like to buy: ")
 number_of_shares=input("Enter the number of shares:")
 company = "WIKI/"+name
@@ -83,12 +84,15 @@ print("buydate: ", BUYDATE, "Selldate:  ", SELLDATE)
 #mydata = quandl.get("WIKI/NVDA"+".4", start_date="2017-06-01",end_date="2017-06-27", transformation="diff")
 #print("Type of raw data: ", type(mydata1))
 #print ("TEST: ",mydata1.Close)
-mydata1_str=mydata1.to_string()
-mydata2_str=mydata2.to_string()
+
 #print (mydata1, mydata2)
 
-data1_val= mydata1_str[48:56]
-data2_val= mydata2_str[48:56]
+#mydata1_str=mydata1.to_string()
+#mydata2_str=mydata2.to_string()
+#data1_val= mydata1_str[48:56]
+#data2_val= mydata2_str[48:56]
+data1_val= float(mydata1.Close)
+data2_val= float(mydata2.Close)
 print("Bought at:  ",data1_val)
 print("Sold at:  ",data2_val)
 
@@ -101,7 +105,7 @@ data2_val=float(data2_val)
 difference= float(number_of_shares)*(data2_val-data1_val)
 #difference= mydata1.Close- mydata2.Close
 percent_change= (data2_val-data1_val)*100/data1_val
-print("Buy: $",data1_val, "Sell: $",data2_val, "Number of shares: ", number_of_shares)
+print("Number of shares: ", number_of_shares)
 print("Net: $", difference, "Net percent change: ", percent_change,"%")
 print()
 print()
