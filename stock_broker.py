@@ -78,12 +78,12 @@ mydata2 = quandl.get(company+'.4', start_date=SELLDATE, end_date=SELLDATE)
 #mydata = quandl.get("WIKI/NVDA"+".4", start_date="2017-06-01",end_date="2017-06-27", transformation="diff")
 print("Type of raw data: ", type(mydata1))
 print ("TEST: ",mydata1.Close)
-mydata1=mydata1.to_string()
-mydata2=mydata2.to_string()
+mydata1_str=mydata1.to_string()
+mydata2_str=mydata2.to_string()
 #print (mydata1, mydata2)
 
-data1_val= mydata1[48:56]
-data2_val= mydata2[48:56]
+data1_val= mydata1_str[48:56]
+data2_val= mydata2_str[48:56]
 print("Bought at:  ",data1_val)
 print("Sold at:  ",data2_val)
 
