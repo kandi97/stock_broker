@@ -75,7 +75,7 @@ while(mydata2.Close.dtype== object):
 	SELLDATE= SELLDATE.strftime("20%y-%m-%d")
 	mydata2 = quandl.get(company+'.4', start_date=SELLDATE, end_date=SELLDATE)
 
-print("buydate: ", BUYDATE, "Selldate:  ", SELLDATE)
+print("Bought on: ", BUYDATE, "Sold on:  ", SELLDATE)
 
 #mydata1 = mydata1[['Close']]
 #mydata2= mydata2[['Close']]
@@ -93,8 +93,8 @@ print("buydate: ", BUYDATE, "Selldate:  ", SELLDATE)
 #data2_val= mydata2_str[48:56]
 data1_val= float(mydata1.Close)
 data2_val= float(mydata2.Close)
-print("Bought at:  ",data1_val)
-print("Sold at:  ",data2_val)
+print("Bought at:  $",data1_val)
+print("Sold at:  $",data2_val)
 
 
 
@@ -106,7 +106,7 @@ difference= float(number_of_shares)*(data2_val-data1_val)
 #difference= mydata1.Close- mydata2.Close
 percent_change= (data2_val-data1_val)*100/data1_val
 print("Number of shares: ", number_of_shares)
-print("Net: $", difference, "Net percent change: ", percent_change,"%")
+print("Net: $", difference, " Net percent change: ", percent_change,"%")
 print()
 print()
 
